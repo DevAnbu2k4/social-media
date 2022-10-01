@@ -1,0 +1,101 @@
+.box{
+    
+    background-color: rgb(253, 238, 238);
+    width: fit-content;
+    height: fit-content;
+    content: right;
+}
+.container-fluid{
+   min-height: fit-content;
+   align-items: right;
+   justify-content: right;
+}
+.contents{
+   height: 50px;
+   width: 50px;
+   align-items: center;
+   justify-content: center;
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 50px;
+}
+.name{
+    
+    align-items: fit-content;
+    justify-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: aliceblue;
+    font-style: italic;
+    font-size: large;
+    font-display: flex;
+    width: fit-content;
+}
+.h1{
+  font-family:sans-serif; color: aliceblue;
+  align-content: center;
+  font-size: 50px;
+  
+  
+}
+.close {
+    position: absolute;
+    right: 32px;
+    top: 10px;
+    width:20px;
+    height: 32px;
+    opacity: 0.3;
+    color: aliceblue;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: white;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  .submit_btn_outer {
+    padding:10px 10px;
+  }
+  .submit_btn {
+      padding: 10px 10px 10px 10px;
+      font-size: 16px;
+      background-color: #770ffe;
+      color: #fff;
+      border: 1px solid #0000;
+      cursor: pointer;
+  }
+  .submit_btn:hover {
+    background-color: #0353e9;
+  }
+  .submit_btn > i {
+    margin-right:5px;
+  }
+  .submit_btn:hover > i {
+      transform: translateX(130px) translateY(-30px);
+      transition: transform 0.5s 0.2s ease-in-out;
+  }
+  input[type=text] {
+    width: 100%;
+    padding: 12px 100px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-bottom: 0%;
+    margin-top: auto;
+  }
+  .body{
+    align-items: fit-content;
+    min-height: fit-content;
+    max-height: fit-content;
+    max-width: fit-content;
+  }
+  

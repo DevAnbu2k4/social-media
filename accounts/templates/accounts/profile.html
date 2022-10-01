@@ -1,0 +1,152 @@
+{% load static %}
+<style>
+  .profile-head {
+    transform: translateY(5rem)
+}
+
+.cover {
+    background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+body {
+    background: #654ea3;
+    background: linear-gradient(to right, #e96443, #904e95);
+    min-height: 100vh;
+    overflow-x:hidden;
+}
+</style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-host-cloud.css'%}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-host-cloud.css'%}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+</head>
+<body>
+  
+
+
+<div class="row py-5 px-4">
+  <div class="col-md-5 mx-auto"> 
+    <!-- Profile widget -->
+    <div class="bg-white shadow rounded overflow-hidden">
+      <div class="px-4 pt-0 pb-4 cover"> 
+        <div class="media align-items-end profile-head"> 
+         
+          <div class="media-body mb-5 text-white"> 
+            <h4 class="mt-0 mb-0">Hello {{user.username}}</h4> 
+            <p class="small mb-4"> 
+              <i class="fas fa-map-marker-alt mr-2">    
+              </i>User</p> 
+            </div> 
+          </div> 
+        </div> 
+        <br>
+        
+       
+        <div class="profile mr-3">
+          <style>
+            .is-round{
+              max-width: 150px;
+              height:150px;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              border-radius: 60%;
+            }
+          </style>
+          {% if profile.profile_Picture %}
+          <img class="is-round" content="center" src="{{ profile.profile_Picture.url }}"  alt="Lights" style="width:100%"><br>
+          {% else %}
+          <img class="is-round" content="center" src="{% static 'accounts/css/profile.jpg' %}" style="width:100%">
+          {% endif %}
+        </div> 
+        <br>
+        <br>
+      
+          
+        
+        <div class="px-4 py-3">
+          <h5 class="mb-0">About</h5> 
+          <div class="p-4 rounded shadow-sm bg-light"> 
+            <p class="font-italic mb-0">Name :{{ user.first_name}}{{user.last_name}}</p> 
+            <p class="font-italic mb-0">Username :{{ user.username}}</p> 
+            <p class="font-italic mb-0">Bio:{{profile.Bio}}</p> 
+            <p class="font-italic mb-0">Email:{{user.email}}</p> 
+             
+          </div> 
+          <br>
+          <style>
+            .button{
+
+              display: inline-block;
+              outline: 0;
+              appearance: none;
+              padding: 0px 12px;
+              border-radius: 4px;
+              text-decoration: none;
+              cursor: pointer;
+              background-color: rgb(249, 251, 250);
+              color: black;
+              border: 1px solid rgb(137, 151, 155);
+              box-shadow: rgb(6 22 33 / 30%) 0px 1px 2px;
+              color: rgb(61, 79, 88);
+              font-size: 14px; color:black;
+              font-weight: 400;
+              height: 36px;
+              transition: all 150ms ease-in-out 0s;
+              margin:auto;
+            
+             }
+             :hover {
+              color: rgb(61, 79, 88);
+              background-color: rgb(255, 255, 255);
+              border: 1px solid rgb(93, 108, 116);
+              box-shadow: rgb(0 0 0 / 30%) 0px 4px 4px, rgb(231 238 236) 0px 0px 0px 3px;
+             }
+          </style>
+          <div class="button">
+            <a href="{% url 'home' %}">Home</a>
+          </div>
+        </div> 
+        <a href="{% url 'edit-profile' %}"  class="btn btn-outline-dark btn-sm btn-block">Edit profile</a>  
+        
+       
+</div>
+</body>

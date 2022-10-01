@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>WEBBAPP</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-host-cloud.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+<!--
+
+Host Cloud Template
+
+https://templatemo.com/tm-541-host-cloud
+
+-->
+  </head>
+ 
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          {% if user.is_authenticated %}
+          <a class="navbar-brand" href="{% url 'profile' request.user %}"><h2>Hello <em>{{user.username}}</em></h2></a>
+          {% else %}
+          <a class="navbar-brand" href="index.html"><h2>WEBB <em>APP</em></h2></a>
+          {% endif %}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' request.user %}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'inbox' %}">Inbox</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout'%}">Log out</a>
+              </li>
+              {% endif %}
+              
+              
+            </ul>
+          </div>
+          <div class="functional-buttons">
+            <ul>
+              {% if user.is_authenticated %}
+              
+              {% else %}
+              <li><a href="{% url 'login'%}">Log in</a></li>
+              <li><a href="{% url 'register'%}">Sign Up</a></li>
+              {% endif %}
+            </ul> 
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+  
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2>Search Your Friend</h2>
+              <div id="search-section">
+              	<form id="suggestion_form" name="gs" method="get" action="{% url 'search' %}">
+                <div class="searchText">
+                  
+                  <input type="text" name="q" class="searchText" placeholder="Search Using Username" autocomplete="on"  value="{{ request.GET.q }}">
+                  
+                </div>
+                    <input type="submit" name="results" class="main-button" value="Search Now">
+                 </form>
+               <div class="advSearch_chkbox">
+                <div class="column is-one-quarter">
+
+                  
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    
+   
+          
+          
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

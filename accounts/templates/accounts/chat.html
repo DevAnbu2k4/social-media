@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <div class="header">
+  <div class="container-fluid">
+    {% for message in messages%}
+    <h1>
+      <strong>{{ message.user.first_name }} {{ message.user.last_name }}</strong> <small>@{{ message.user.username }}</small>
+    <h1>
+      
+    <hr>
+  </div>
+  </div>
+  {% endfor %}
+  <div class="container">
+    {% for direct in directs%}
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              {{ direct.sender.username }} :
+            </p>
+            <strong>{{ direct.body }}</strong> <small>{{ direct.date|date:'G:i'}}</small>
+          </div>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

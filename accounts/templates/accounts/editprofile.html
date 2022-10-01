@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="{% static 'accounts/css/new.css'%}" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-host-cloud.css'%}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+
+  <title>Edit Profile</title>
+</head>
+<body>
+
+
+        
+{% block content %}
+
+
+
+   
+
+    <form method="post" enctype="multipart/form-data" action="" role="form">
+      {% csrf_token %}
+    <h3 class="title is-3">Edit Profile</h3>
+
+          <div class="field">
+              <label class="label is-medium">Choose your picture</label>
+              <div class="file is-boxed">
+                {{ form.profile_Picture }}
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label is-medium">Bio</label>
+              <div class="control">
+                {{ form.Bio }}
+              </div>
+          </div>
+
+          
+          </div>
+
+      <div class="row">
+        <div class="col s12">
+          <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+        </div>
+      </div>
+
+
+      <div class="field">
+      <p class="control">
+        <button type="submit" value="login" class="button is-success">
+          Update
+        </button>
+      </p>
+    </div>
+
+    </form>
+  </div>
+</div>
+
+  </div>
+</div>
+
+{% endblock %}
+  
+</body>
+</html>
